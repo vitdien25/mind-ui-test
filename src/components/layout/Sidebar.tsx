@@ -1,102 +1,46 @@
 import styles from "./layout.module.scss";
-import {
-  MdHome,
-  MdOutlineWarning,
-  MdDashboard,
-  MdOutlineDevicesOther,
-  MdWebAsset,
-  MdOutlineViewSidebar,
-  MdOutlineLan,
-  MdOutlineSettingsInputAntenna,
-  MdOutlineConstruction,
-  MdFolder,
-  MdSmartphone,
-} from "react-icons/md";
-import { FaShapes, FaMessage, FaMicrochip } from "react-icons/fa6";
-import { RiProfileLine, RiCustomerService2Fill } from "react-icons/ri";
-import { IoMdCodeWorking } from "react-icons/io";
+
 import Sider from "antd/es/layout/Sider";
-import Menu from "antd/es/menu";
-const sidebarItems = [
-  {
-    key: "/",
-    icon: <MdHome />,
-    label: "Home",
-  },
-  {
-    key: "/alarms",
-    icon: <MdOutlineWarning />,
-    label: "Alarms",
-  },
-  {
-    key: "/dashboards",
-    icon: <MdDashboard />,
-    label: "Dashboards",
-  },
-  {
-    key: "entities",
-    icon: <FaShapes />,
-    label: "Entities",
-    children: [
-      { key: "/devices", label: "Devices", icon: <MdOutlineDevicesOther /> },
-      { key: "/assets", label: "Assets", icon: <MdWebAsset /> },
-      {
-        key: "/entity-views",
-        label: "Entity views",
-        icon: <MdOutlineViewSidebar />,
-      },
-      { key: "/gateways", label: "Gateways", icon: <MdOutlineLan /> },
-    ],
-  },
-  {
-    key: "/profiles",
-    icon: <RiProfileLine />,
-    label: "Profiles",
-  },
-  {
-    key: "/customers",
-    icon: <RiCustomerService2Fill />,
-    label: "Customers",
-  },
-  {
-    key: "/rules-chains",
-    icon: <IoMdCodeWorking />,
-    label: "Rule chains",
-  },
-  {
-    key: "/edge-management",
-    icon: <MdOutlineSettingsInputAntenna />,
-    label: "Edge management",
-  },
-  {
-    key: "/advanced-features",
-    icon: <MdOutlineConstruction />,
-    label: "Advanced features",
-  },
-  {
-    key: "/resources",
-    icon: <MdFolder />,
-    label: "Resources",
-  },
-  {
-    key: "/notification-center",
-    icon: <FaMessage />,
-    label: "Notification center",
-  },
-  {
-    key: "/mobile-center",
-    icon: <MdSmartphone />,
-    label: "Mobile center",
-  },
-];
+import Menu, { type MenuProps } from "antd/es/menu";
+import { useNavigate } from "react-router-dom";
+import {
+  findItemByKey,
+  sidebarItems,
+  type SidebarItem,
+} from "../../config/sidebar.config";
+import { FaMicrochip } from "react-icons/fa6";
+
+type AntdMenuItem = Required<MenuProps>["items"][number];
+
+const mapToMenuItems = (items: SidebarItem[]): AntdMenuItem[] => {
+  return items.map((item) => ({
+    key: item.key,
+    icon: item.icon,
+    label: item.label,
+    children: item.children ? mapToMenuItems(item.children) : undefined,
+  }));
+};
+
 const Sidebar = () => {
+  const navigate = useNavigate();
+
+  const handleMenuClick = (e: { key: string }) => {
+    const item = findItemByKey(sidebarItems, e.key);
+    if (item?.key) navigate(item.key);
+  };
+
   return (
     <Sider className={styles.sidebar} width={250}>
       <div className={styles.logo}>
         <FaMicrochip />
         ThighsBoard
       </div>
-      <Menu items={sidebarItems} mode="inline" className={styles.menu} />
+      <Menu
+        items={mapToMenuItems(sidebarItems)}
+        mode="inline"
+        className={styles.menu}
+        onClick={handleMenuClick}
+      />
     </Sider>
   );
 };

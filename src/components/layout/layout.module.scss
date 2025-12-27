@@ -21,17 +21,20 @@
                 font-weight: 600;
                 font-size: 16px;
                 border-radius: 0px;
-                border-top: 1px solid #142335;
+                border-top: 1px solid #334b69;
                 margin: 0px;
                 width: 100%;
                 padding: 22px 0px ;
+            }
+            .ant-menu-submenu .ant-menu-item {
+                border-top: none ;
             }
             .ant-menu-submenu-title {
                 color: #fff ;
                 font-weight: 600;
                 font-size: 16px;
                 border-radius: 0px;
-                border-top: 1px solid #142335;
+                border-top: 1px solid #334b69;
                 margin: 0px;
                 width: 100%;
             }
@@ -49,6 +52,77 @@
             .ant-menu-item-icon {
                 font-size: 18px;
             }
+        }
+    }
+}
+
+.appLayout {
+    min-height: 100vh;
+    .layout {
+
+        .header {
+            background-color: #305680;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 0 24px;
+            box-shadow: 0 2px 8px #f0f1f2;
+            display: flex;
+            justify-content: space-between;
+
+            .headerTitle {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-weight: 600;
+                font-size: 24px;
+            }
+            .headerActions {
+                display: flex;
+                align-items: center;
+                gap: 0px;
+
+                Button {
+                    background: transparent;
+                    border: none;
+                    color: #fff;
+                    font-size: 18px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .user{
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    margin-right: 16px;
+                    .userInfo {
+                            display: flex;
+                            flex-direction: column;
+                            line-height: 1.2;
+                    
+                            span {
+                                &:first-child {
+                                    font-size: 16px;
+                                    font-weight: 600;
+                                }
+                    
+                                &:last-child {
+                                    font-size: 12px;
+                                    color: #cfd8e6;
+                                }
+                            }
+                        }
+                }
+                
+
+            }
+        }
+        .content {
+            margin: 14px;
+            background: #fff;
+            min-height: 280px;
+            box-shadow: 0 2px 8px #f0f1f2;
         }
     }
 }
