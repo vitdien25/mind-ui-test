@@ -1,0 +1,43 @@
+.homePage {
+    min-height: 100vh;
+    width: 100%;
+    .demoContainer {
+        background: #fff;
+        border: 1px solid #d9d9d9;
+        border-radius: 8px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        .demoHeader {
+            border-bottom: 1px solid #d9d9d9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            span {
+                margin-left: 14px;
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            Button {
+                border: none;
+                background: transparent;
+                box-shadow: none;
+            }
+        }
+        .demoContent {
+            padding: 14px;
+            display: flex;
+            gap: 14px;
+        }
+    }
+    .container {
+            background: #fff;
+            border: 1px solid #d9d9d9;
+            border-radius: 8px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+}
