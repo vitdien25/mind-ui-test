@@ -1,4 +1,4 @@
-import { Button, Col, Row, Space } from "antd";
+import { Col, Row, Space } from "antd";
 import styles from "./HomePage.module.scss";
 import UseCaseCard from "../../components/cards/UseCaseCard";
 import {
@@ -6,6 +6,7 @@ import {
   MdArrowForwardIos,
   MdOutlineArrowOutward,
 } from "react-icons/md";
+import StatusCard from "../../components/cards/StatusCard";
 const HomePage = () => {
   return (
     <Space className={styles.homePage} size={14} orientation="vertical">
@@ -15,18 +16,18 @@ const HomePage = () => {
             {/* Demo use cases */}
             <Col span={24}>
               <div className={styles.demoContainer}>
-                <div className={styles.demoHeader}>
+                <div className={styles.containerHeader}>
                   <span>
                     Demo use cases
                     <MdOutlineArrowOutward />
                   </span>
                   <span>
-                    <Button>
+                    <button>
                       <MdArrowBackIos />
-                    </Button>
-                    <Button>
+                    </button>
+                    <button>
                       <MdArrowForwardIos />
-                    </Button>
+                    </button>
                   </span>
                 </div>
                 <div className={styles.demoContent}>
@@ -37,7 +38,19 @@ const HomePage = () => {
               </div>
             </Col>
             <Col span={12}>
-              <div className={styles.container}>Devices</div>
+              <div className={styles.container}>
+                <div className={styles.containerHeader}>
+                  <span>
+                    Demo use cases
+                    <MdOutlineArrowOutward />
+                  </span>
+                </div>
+                <div className={styles.statusCards}>
+                  <StatusCard label="Inactive" data={28} color="red" />
+                  <StatusCard label="Active" data={0} color="blue" />
+                  <StatusCard label="Total" data={28} />
+                </div>
+              </div>
             </Col>
             <Col span={12}>
               <div className={styles.container}>Alarms</div>

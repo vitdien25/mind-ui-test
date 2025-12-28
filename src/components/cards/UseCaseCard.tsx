@@ -1,5 +1,3 @@
-import { Image } from "antd";
-import { Tooltip } from "antd";
 import styles from "./Card.module.scss";
 
 interface UseCaseCardProps {
