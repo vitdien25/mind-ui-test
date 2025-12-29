@@ -1,4 +1,4 @@
-import { Button, Col, Row, Select, Space } from "antd";
+import { Button, Col, QRCode, Row, Select, Space } from "antd";
 import styles from "./HomePage.module.scss";
 import UseCaseCard from "../../components/cards/UseCaseCard";
 import {
@@ -9,10 +9,11 @@ import {
 import StatusCard from "../../components/cards/StatusCard";
 import { IoIosWarning } from "react-icons/io";
 import DashboardTable from "../../components/tables/DashboardTable";
-import { FaPen } from "react-icons/fa";
+import { FaApple, FaGooglePlay, FaPen } from "react-icons/fa";
 import Container from "../../components/Container/Container";
 import QuickLinks from "../../components/cards/QuickLinks";
 import Stats from "../../components/cards/Stats";
+import AppButton from "../../components/buttons/AppButton";
 const HomePage = () => {
   return (
     <Space className={styles.homePage} size={10} orientation="vertical">
@@ -215,12 +216,31 @@ const HomePage = () => {
             </Col>
           </Row>
         </Col>
-        {/* System activity */}
+        {/* Connect mobile app */}
         <Col span={7}>
           <Container
             leftHeader="Connect mobile app"
             alighnHeader="start"
-          ></Container>
+            headerHeight={40}
+          >
+            <div className={styles.qrSection}>
+              <QRCode
+                errorLevel={"H"}
+                value="https://www.youtube.com/watch?v=zhciw9OZTM8"
+                size={100}
+              />
+              <div className={styles.appButtons}>
+                <AppButton
+                  icon={<FaApple size={32} color="#fff" />}
+                  text={{ text: "Download on the", app: "App Store" }}
+                />
+                <AppButton
+                  icon={<FaGooglePlay size={32} color="#fff" />}
+                  text={{ text: "GET IT ON", app: "Google Play" }}
+                />
+              </div>
+            </div>
+          </Container>
         </Col>
       </Row>
     </Space>

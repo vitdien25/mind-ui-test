@@ -9,25 +9,46 @@
         padding: 8px;
         padding-bottom: 12px;
     }
-        .navButton {
-            border: none;
-            background: transparent;
-            box-shadow: none;
+    .navButton {
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .qrSection {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+
+        .appButtons {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            gap: 8px;
         }
-                :global {
-                    .ant-select {
-                        width: 110px;
-                        padding-left: 6px;
-                    }
+    }
         
-                    .ant-select-content-value {
-                        font-size: 12px;
-                        font-weight: 500;
-                    }
-                }
+    :global {
+        .ant-select {
+            width: 110px;
+            padding-left: 6px;
+        }
+        
+        .ant-select-content-value {
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .ant-qrcode {
+            border: none;
+            box-shadow: none;
+            border-radius: 0px;
+            padding: 0px
+        }
+        
+    }
     
     
     
