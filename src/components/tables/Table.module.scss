@@ -1,0 +1,24 @@
+.dashboardTable {
+    width: 100%;
+    :global {
+        .ant-table-thead > tr > th {
+            background: transparent;
+            color: #858585;
+            font-size: 12px;
+            border: none;
+            padding-top: 4px ;
+            padding-bottom: 4px;
+        }
+        .ant-table-thead>tr>th::before {
+            display: none !important;
+        }
+
+        .ant-table-tbody > tr > td {
+            font-size: 12px;
+            font-weight: 500;
+            border: none;
+            padding-top: 6px ;
+            padding-bottom: 6px ;
+        }
+    }
+}

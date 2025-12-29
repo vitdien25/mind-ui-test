@@ -1,0 +1,53 @@
+.container {
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .containerHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4px;
+
+        span {
+            padding: 4px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .navButton {
+            border: none;
+            background: transparent;
+            box-shadow: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        :global {
+            .ant-select {
+                width: 110px;
+                padding-left: 6px;
+            }
+
+            .ant-select-content-value {
+                font-size: 12px;
+                font-weight: 500;
+            }
+        }
+
+    }
+
+    .containerContent {
+        padding: 8px;
+        padding-top: 0px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+    }
+}

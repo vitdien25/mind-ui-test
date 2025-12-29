@@ -30,7 +30,7 @@ const Sidebar = () => {
   };
 
   return (
-    <Sider className={styles.sidebar} width={250}>
+    <Sider className={styles.sidebar} width={250} style={{ height: "120vh" }}>
       <div className={styles.logo}>
         <FaMicrochip />
         ThighsBoard
