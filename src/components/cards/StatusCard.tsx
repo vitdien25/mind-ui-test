@@ -10,8 +10,9 @@ interface StatusCardProps {
   label: string;
   color?: string;
   data: number;
+  icon?: React.ReactNode;
 }
-const StatusCard = ({ label, color, data }: StatusCardProps) => {
+const StatusCard = ({ label, color, data, icon }: StatusCardProps) => {
   return (
     <div
       className={styles.statusCard}
@@ -21,7 +22,9 @@ const StatusCard = ({ label, color, data }: StatusCardProps) => {
         {label}
         <MdOutlineArrowOutward />
       </div>
-      <span className={styles.statusCardData}>{data}</span>
+      <span className={styles.statusCardData}>
+        {data} {icon}
+      </span>
     </div>
   );
 };
