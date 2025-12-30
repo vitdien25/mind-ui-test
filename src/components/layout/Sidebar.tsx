@@ -30,13 +30,15 @@ const Sidebar = () => {
   };
 
   return (
-    <Sider className={styles.sidebar} width={250} style={{ height: "120vh" }}>
+    <Sider className={styles.sidebar} width={250} style={{ height: "100vh" }}>
       <div className={styles.logo}>
         <FaMicrochip />
         ThighsBoard
       </div>
       <Menu
         items={mapToMenuItems(sidebarItems)}
+        defaultSelectedKeys={["/"]}
+        defaultOpenKeys={["entities"]}
         mode="inline"
         className={styles.menu}
         onClick={handleMenuClick}

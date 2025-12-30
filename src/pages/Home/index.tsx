@@ -42,11 +42,16 @@ const HomePage = () => {
                     </button>
                   </>
                 }
-                headerHeight={30}
+                headerHeight={40}
+                containerHeight={130}
               >
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <UseCaseCard key={index} />
-                ))}
+                <Row gutter={[10, 10]}>
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <Col span={24 / 5}>
+                      <UseCaseCard key={index} />
+                    </Col>
+                  ))}
+                </Row>
               </Container>
             </Col>
             {/* Devices */}
@@ -64,6 +69,7 @@ const HomePage = () => {
                   </>
                 }
                 alighnHeader="start"
+                containerHeight={115}
               >
                 <StatusCard label="Inactive" data={28} color="red" />
                 <StatusCard label="Active" data={0} color="blue" />
@@ -79,6 +85,7 @@ const HomePage = () => {
                   </>
                 }
                 alighnHeader="start"
+                containerHeight={115}
               >
                 <StatusCard
                   label="Critical"
@@ -93,6 +100,7 @@ const HomePage = () => {
             {/* Dashboard */}
             <Col span={12}>
               <Container
+                containerHeight={185}
                 leftHeader={
                   <>
                     Dashboard
@@ -118,6 +126,7 @@ const HomePage = () => {
             {/* Activity */}
             <Col span={12}>
               <Container
+                containerHeight={185}
                 leftHeader="Activity"
                 rightHeader={
                   <Select
@@ -143,7 +152,7 @@ const HomePage = () => {
             leftHeader="Get started"
             alighnHeader="start"
             headerHeight={45}
-            containerHeight={460}
+            containerHeight={450}
           >
             <GetStartedAccordion />
           </Container>
@@ -155,6 +164,7 @@ const HomePage = () => {
             {/* Quick links */}
             <Col span={8}>
               <Container
+                containerHeight={155}
                 leftHeader="Quick links"
                 rightHeader={
                   <button className={styles.navButton}>
@@ -175,6 +185,7 @@ const HomePage = () => {
             {/* Documentation */}
             <Col span={8}>
               <Container
+                containerHeight={155}
                 leftHeader={
                   <>
                     Documentation <MdOutlineArrowOutward />
@@ -200,6 +211,7 @@ const HomePage = () => {
             {/* Usage */}
             <Col span={8}>
               <Container
+                containerHeight={155}
                 leftHeader={
                   <>
                     Usage <MdOutlineArrowOutward />
@@ -232,6 +244,7 @@ const HomePage = () => {
         {/* Connect mobile app */}
         <Col span={7}>
           <Container
+            containerHeight={155}
             leftHeader="Connect mobile app"
             alighnHeader="start"
             headerHeight={40}

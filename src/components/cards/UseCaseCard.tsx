@@ -1,3 +1,4 @@
+import Tooltip from "antd/es/tooltip";
 import styles from "./Card.module.scss";
 
 interface UseCaseCardProps {
@@ -7,13 +8,25 @@ interface UseCaseCardProps {
 const UseCaseCard = ({ imageSrc, label }: UseCaseCardProps) => {
   return (
     <div className={styles.demoCard}>
-      <div className={styles.imageWrapper}>
+      <Tooltip
+        classNames={styles.tooltip}
+        placement="bottom"
+        color={"#fff"}
+        title={
+          <img
+            src={imageSrc ? imageSrc : "./src/assets/dogaccepttingfate.jpg"}
+            alt={label}
+            width={480}
+            height={240}
+          />
+        }
+      >
         <img
           src={imageSrc ? imageSrc : "./src/assets/dogaccepttingfate.jpg"}
           alt={label}
         />
-        <div className={styles.label}>{label ? label : "????????"}</div>
-      </div>
+      </Tooltip>
+      <div className={styles.label}>{label ? label : "????????"}</div>
     </div>
   );
 };
