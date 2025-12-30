@@ -14,6 +14,9 @@ import Container from "../../components/Container/Container";
 import QuickLinks from "../../components/cards/QuickLinks";
 import Stats from "../../components/cards/Stats";
 import AppButton from "../../components/buttons/AppButton";
+import GetStartedAccordion from "../../components/cards/GetStartedAccordion";
+import LineChart from "../../components/charts/LineChart";
+
 const HomePage = () => {
   return (
     <Space className={styles.homePage} size={10} orientation="vertical">
@@ -127,13 +130,23 @@ const HomePage = () => {
                   />
                 }
                 alighnHeader="start"
-              ></Container>
+                headerHeight={40}
+              >
+                <LineChart />
+              </Container>
             </Col>
           </Row>
         </Col>
         {/* Get started */}
         <Col span={7}>
-          <Container leftHeader="Get started" alighnHeader="start"></Container>
+          <Container
+            leftHeader="Get started"
+            alighnHeader="start"
+            headerHeight={45}
+            containerHeight={460}
+          >
+            <GetStartedAccordion />
+          </Container>
         </Col>
       </Row>
       <Row gutter={[10, 10]}>

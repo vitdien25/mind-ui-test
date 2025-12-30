@@ -119,3 +119,65 @@
     }
     
 }
+
+.accordion {
+    width: 100%;
+
+    .accordionLabel {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 400;
+        .stepIcon {
+            background-color: #305680;
+            color: #fff;
+            font-weight: 600;
+        }
+    }
+    
+    :global {
+        .ant-collapse-item {
+                border-bottom: 0px !important;
+                background-color: #fff;
+            }
+        .ant-collapse-item-active {
+            background-color: #e5e2e217;   
+        }
+    }
+    
+    :global(.ant-collapse-item-active) {
+        .accordionLabel {
+            font-weight: 700;
+        }
+    }
+}
+
+.copyBox {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+    background-color: #f9fafb;
+    
+    .textBlock {
+        word-break: break-all;
+        padding: 8px 0px 8px 12px;
+        margin:0px;
+        display: flex;
+        flex: 1;
+        font-size: 13px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+    }
+    .copyButton {
+        border-radius: 0px;
+        margin-top: 6px;
+        width: 48px;
+        &:hover {
+            background-color: transparent !important;
+        }
+    }
+}

@@ -11,7 +11,7 @@ interface AppButtonProps {
 
 const AppButton = ({ icon, text }: AppButtonProps) => {
   return (
-    <Button type="default" variant="solid" className={styles.appButton}>
+    <Button type="primary" variant="solid" className={styles.appButton}>
       {icon}
       <div className={styles.appButtonText}>
         <span>{text.text}</span>
