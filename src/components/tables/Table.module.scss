@@ -1,24 +1,62 @@
 .dashboardTable {
-    width: 100%;
-    :global {
-        .ant-table-thead > tr > th {
-            background: transparent;
-            color: #858585;
-            font-size: 12px;
-            border: none;
-            padding-top: 4px ;
-            padding-bottom: 4px;
-        }
-        .ant-table-thead>tr>th::before {
-            display: none !important;
-        }
-
-        .ant-table-tbody > tr > td {
-            font-size: 12px;
-            font-weight: 500;
-            border: none;
-            padding-top: 6px ;
-            padding-bottom: 6px ;
-        }
+  width: 100%;
+  :global {
+    .ant-table-thead > tr > th {
+      background: transparent;
+      color: #858585;
+      font-size: 12px;
+      border: none;
+      padding-top: 4px;
+      padding-bottom: 4px;
     }
+    .ant-table-thead > tr > th::before {
+      display: none !important;
+    }
+
+    .ant-table-tbody > tr > td {
+      font-size: 12px;
+      font-weight: 500;
+      border: none;
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+  }
+}
+
+:global {
+    .ant-table {
+        border-radius: 0px !important;
+    }
+  .ant-table-thead > tr > th {
+    background-color: transparent !important;
+    
+    border: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .ant-table-thead > tr > th::before {
+    display: none !important;
+  }
+
+  .ant-table-tbody > tr:not(.ant-table-measure-row) > td {
+    
+    font-weight: 400;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+  .ant-pagination {
+    background-color: #fff;
+    margin: 0px !important;
+    padding: 8px 16px !important;
+  }
+  .ant-tag {
+    font-size: 12px;
+    font-weight: 400;
+    padding: 4px 6px !important;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
