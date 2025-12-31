@@ -18,7 +18,7 @@ export interface Device {
   label?: string;
   state: "Active" | "Inactive";
   customer: string;
-  isPublic: boolean;
+  public: boolean;
   isGateway: boolean;
 }
 
@@ -131,6 +131,111 @@ export const devicesData: Device[] = Array.from({ length: 20 }, (_, i) => ({
   label: i % 3 === 0 ? `Label ${((i % 4) + 1).toString()}` : undefined,
   state: i % 2 === 0 ? "Active" : "Inactive",
   customer: "Public",
-  isPublic: i % 2 === 0,
+  public: i % 2 === 0,
   isGateway: i % 3 === 0,
+}));
+
+export interface Asset {
+  key: string;
+  createdTime: string;
+  name: string;
+  assetProfile: string;
+  label?: string;
+  customer: string;
+  public: boolean;
+}
+
+export const assetsColumns: ColumnsType<Asset> = [
+  {
+    title: "Created time",
+    dataIndex: "createdTime",
+    key: "createdTime",
+    width: 200,
+    sorter: (a, b) =>
+      new Date(a.createdTime).getTime() - new Date(b.createdTime).getTime(),
+    sortDirections: ["descend"],
+  },
+  { title: "Name", dataIndex: "name", key: "name", width: 150 },
+  {
+    title: "Asset profile",
+    dataIndex: "assetProfile",
+    key: "assetProfile",
+    width: 150,
+  },
+  { title: "Label", dataIndex: "label", key: "label", width: 150 },
+  { title: "Customer", dataIndex: "customer", key: "customer", width: 150 },
+  {
+    title: "Public",
+    dataIndex: "public",
+    key: "public",
+    width: 100,
+    render: (c: boolean) => <Checkbox checked={c} />,
+  },
+  {
+    title: "",
+    dataIndex: "actions",
+    key: "actions",
+    render: () => (
+      <Space size="middle">
+        <IconButton
+          icon={
+            <Tooltip title="Share">
+              <MdShare size={20} />
+            </Tooltip>
+          }
+          isDisabled={Math.random() < 0.5}
+        />
+        <IconButton
+          icon={
+            <Tooltip title="Assign">
+              <MdAssignmentInd size={20} />
+            </Tooltip>
+          }
+          isDisabled={Math.random() < 0.5}
+        />
+        <IconButton
+          icon={
+            <Tooltip title="Transfer">
+              <RiFolderTransferFill size={20} />
+            </Tooltip>
+          }
+          isDisabled={Math.random() < 0.5}
+        />
+        <IconButton
+          icon={
+            <Tooltip title="Move">
+              <BiSolidShare size={20} />
+            </Tooltip>
+          }
+          isDisabled={Math.random() < 0.5}
+        />
+        <IconButton
+          icon={
+            <Tooltip title="Security">
+              <MdOutlineSecurity size={20} />
+            </Tooltip>
+          }
+          isDisabled={Math.random() < 0.5}
+        />
+        <IconButton
+          icon={
+            <Tooltip title="Delete">
+              <MdDelete size={20} />
+            </Tooltip>
+          }
+          isDisabled={Math.random() < 0.5}
+        />
+      </Space>
+    ),
+  },
+];
+
+export const assetsData: Asset[] = Array.from({ length: 20 }, (_, i) => ({
+  key: i.toString(),
+  createdTime: new Date(2023, 0, i + 1).toISOString().split(`.`)[0],
+  name: `Asset ${i + 1}`,
+  assetProfile: `Profile ${((i % 5) + 1).toString()}`,
+  label: i % 3 === 0 ? `Label ${((i % 4) + 1).toString()}` : undefined,
+  customer: "Public",
+  public: i % 2 === 0,
 }));
