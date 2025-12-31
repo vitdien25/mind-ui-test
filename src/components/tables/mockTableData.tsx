@@ -8,6 +8,7 @@ import {
 import { RiFolderTransferFill } from "react-icons/ri";
 import { BiSolidShare } from "react-icons/bi";
 import type { ColumnsType } from "antd/es/table/interface";
+import IconButton from "../buttons/IconButton";
 
 export interface Device {
   key: string;
@@ -69,24 +70,54 @@ export const devicesColumns: ColumnsType<Device> = [
     key: "actions",
     render: () => (
       <Space size="middle">
-        <Tooltip title="Share">
-          <MdShare size={20} />
-        </Tooltip>
-        <Tooltip title="Assign">
-          <MdAssignmentInd size={20} />
-        </Tooltip>
-        <Tooltip title="Transfer">
-          <RiFolderTransferFill size={20} />
-        </Tooltip>
-        <Tooltip title="Move">
-          <BiSolidShare size={20} />
-        </Tooltip>
-        <Tooltip title="Security">
-          <MdOutlineSecurity size={20} />
-        </Tooltip>
-        <Tooltip title="Delete">
-          <MdDelete size={20} />
-        </Tooltip>
+        <IconButton
+          icon={
+            <Tooltip title="Share">
+              <MdShare size={20} />
+            </Tooltip>
+          }
+          isDisabled={Math.random() < 0.5}
+        />
+        <IconButton
+          icon={
+            <Tooltip title="Assign">
+              <MdAssignmentInd size={20} />
+            </Tooltip>
+          }
+          isDisabled={Math.random() < 0.5}
+        />
+        <IconButton
+          icon={
+            <Tooltip title="Transfer">
+              <RiFolderTransferFill size={20} />
+            </Tooltip>
+          }
+          isDisabled={Math.random() < 0.5}
+        />
+        <IconButton
+          icon={
+            <Tooltip title="Move">
+              <BiSolidShare size={20} />
+            </Tooltip>
+          }
+          isDisabled={Math.random() < 0.5}
+        />
+        <IconButton
+          icon={
+            <Tooltip title="Security">
+              <MdOutlineSecurity size={20} />
+            </Tooltip>
+          }
+          isDisabled={Math.random() < 0.5}
+        />
+        <IconButton
+          icon={
+            <Tooltip title="Delete">
+              <MdDelete size={20} />
+            </Tooltip>
+          }
+          isDisabled={Math.random() < 0.5}
+        />
       </Space>
     ),
   },

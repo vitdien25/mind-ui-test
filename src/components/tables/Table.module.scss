@@ -23,9 +23,32 @@
   }
 }
 
+.entitiesTable {
+  .tableHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    .leftHeader {
+      display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 24px;
+        font-weight: 600;
+        color: #212121;
+      }
+    
+      .rightHeader {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+      }
+  }
+}
+
 :global {
     .ant-table {
         border-radius: 0px !important;
+        padding-left: 6px !important;
     }
   .ant-table-thead > tr > th {
     background-color: transparent !important;
@@ -49,6 +72,13 @@
     background-color: #fff;
     margin: 0px !important;
     padding: 8px 16px !important;
+  }
+  .ant-checkbox-input:checked + .ant-checkbox-inner {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+  }
+  .ant-checkbox-input:hover + .ant-checkbox-inner {
+    border-color: #000000 !important;
   }
   .ant-tag {
     font-size: 12px;
