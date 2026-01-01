@@ -17,12 +17,7 @@ const dataSource = [
 const DashboardTable = () => {
   return (
     <div className={styles.dashboardTable}>
-      <Table
-        columns={columns}
-        dataSource={dataSource}
-        pagination={false}
-        scroll={{ y: 100 }}
-      />
+      <Table columns={columns} dataSource={dataSource} pagination={false} />
     </div>
   );
 };

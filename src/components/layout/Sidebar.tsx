@@ -30,7 +30,11 @@ const Sidebar = () => {
   };
 
   return (
-    <Sider className={styles.sidebar} width={250} style={{ height: "100vh" }}>
+    <Sider
+      className={styles.sidebar}
+      width={"15.625rem"}
+      style={{ height: "100vh" }}
+    >
       <div className={styles.logo}>
         <FaMicrochip />
         ThighsBoard

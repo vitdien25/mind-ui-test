@@ -6,7 +6,7 @@ interface ContainerProps {
   children?: React.ReactNode;
   alighnHeader?: "start" | "end";
   headerHeight?: number;
-  containerHeight?: number;
+  containerHeight?: string | number;
 }
 
 const Container = ({
@@ -18,7 +18,10 @@ const Container = ({
   containerHeight,
 }: ContainerProps) => {
   return (
-    <div className={styles.container} style={{ height: containerHeight ? containerHeight : "100%" }}>
+    <div
+      className={styles.container}
+      style={{ height: containerHeight ? containerHeight : "100%" }}
+    >
       <div
         className={styles.containerHeader}
         style={{

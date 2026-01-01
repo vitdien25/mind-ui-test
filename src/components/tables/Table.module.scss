@@ -25,38 +25,38 @@
 
 .entitiesTable {
   .tableHeader {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     .leftHeader {
       display: flex;
-        align-items: center;
-        gap: 14px;
-        font-size: 24px;
-        font-weight: 600;
-        color: #212121;
-      }
-    
-      .rightHeader {
-        display: flex;
-        align-items: center;
-        gap: 32px;
-      }
+      align-items: center;
+      gap: 14px;
+      font-size: 24px;
+      font-weight: 600;
+      color: #212121;
+    }
+
+    .rightHeader {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
   }
 }
 
 :global {
-    .ant-table {
-        border-radius: 0px !important;
-        padding-left: 6px !important;
-    }
-    .ant-table-title {
-      padding: 8px 16px !important;
-      height: 60px;
-    }
+  .ant-table {
+    border-radius: 0px !important;
+    padding-left: 6px !important;
+  }
+  .ant-table-title {
+    padding: 8px 16px !important;
+    height: 60px;
+  }
   .ant-table-thead > tr > th {
     background-color: transparent !important;
-    
+
     border: none;
     padding-top: 4px;
     padding-bottom: 4px;
@@ -67,7 +67,6 @@
   }
 
   .ant-table-tbody > tr:not(.ant-table-measure-row) > td {
-    
     font-weight: 400;
     padding-top: 12px !important;
     padding-bottom: 12px !important;

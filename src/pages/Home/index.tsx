@@ -16,6 +16,7 @@ import Stats from "../../components/cards/Stats";
 import AppButton from "../../components/buttons/AppButton";
 import GetStartedAccordion from "../../components/cards/GetStartedAccordion";
 import LineChart from "../../components/charts/LineChart";
+import IconButton from "../../components/buttons/IconButton";
 
 const HomePage = () => {
   return (
@@ -34,24 +35,17 @@ const HomePage = () => {
                 }
                 rightHeader={
                   <>
-                    <button className={styles.navButton}>
-                      <MdArrowBackIos />
-                    </button>
-                    <button className={styles.navButton}>
-                      <MdArrowForwardIos />
-                    </button>
+                    <IconButton icon={<MdArrowBackIos />} />
+                    <IconButton icon={<MdArrowForwardIos />} />
                   </>
                 }
                 headerHeight={40}
-                containerHeight={130}
               >
-                <Row gutter={[10, 10]}>
+                <div className={styles.useCaseList}>
                   {Array.from({ length: 5 }).map((_, index) => (
-                    <Col span={24 / 5}>
-                      <UseCaseCard key={index} />
-                    </Col>
+                    <UseCaseCard key={index} />
                   ))}
-                </Row>
+                </div>
               </Container>
             </Col>
             {/* Devices */}
@@ -69,7 +63,6 @@ const HomePage = () => {
                   </>
                 }
                 alighnHeader="start"
-                containerHeight={115}
               >
                 <StatusCard label="Inactive" data={28} color="red" />
                 <StatusCard label="Active" data={0} color="blue" />
@@ -85,7 +78,6 @@ const HomePage = () => {
                   </>
                 }
                 alighnHeader="start"
-                containerHeight={115}
               >
                 <StatusCard
                   label="Critical"
@@ -100,7 +92,6 @@ const HomePage = () => {
             {/* Dashboard */}
             <Col span={12}>
               <Container
-                containerHeight={185}
                 leftHeader={
                   <>
                     Dashboard
@@ -120,13 +111,14 @@ const HomePage = () => {
                   </>
                 }
               >
-                <DashboardTable />
+                <div className={styles.dashboardTableSection}>
+                  <DashboardTable />
+                </div>
               </Container>
             </Col>
             {/* Activity */}
             <Col span={12}>
               <Container
-                containerHeight={185}
                 leftHeader="Activity"
                 rightHeader={
                   <Select
@@ -152,9 +144,10 @@ const HomePage = () => {
             leftHeader="Get started"
             alighnHeader="start"
             headerHeight={45}
-            containerHeight={450}
           >
-            <GetStartedAccordion />
+            <div className={styles.accordionSection}>
+              <GetStartedAccordion />
+            </div>
           </Container>
         </Col>
       </Row>
@@ -164,12 +157,9 @@ const HomePage = () => {
             {/* Quick links */}
             <Col span={8}>
               <Container
-                containerHeight={155}
                 leftHeader="Quick links"
                 rightHeader={
-                  <button className={styles.navButton}>
-                    <FaPen size={16} color="#989a9d" />
-                  </button>
+                  <IconButton icon={<FaPen size={16} color="#989a9d" />} />
                 }
                 alighnHeader="end"
               >
@@ -185,16 +175,13 @@ const HomePage = () => {
             {/* Documentation */}
             <Col span={8}>
               <Container
-                containerHeight={155}
                 leftHeader={
                   <>
                     Documentation <MdOutlineArrowOutward />
                   </>
                 }
                 rightHeader={
-                  <button className={styles.navButton}>
-                    <FaPen size={16} color="#989a9d" />
-                  </button>
+                  <IconButton icon={<FaPen size={16} color="#989a9d" />} />
                 }
                 alighnHeader="end"
               >
@@ -211,7 +198,6 @@ const HomePage = () => {
             {/* Usage */}
             <Col span={8}>
               <Container
-                containerHeight={155}
                 leftHeader={
                   <>
                     Usage <MdOutlineArrowOutward />
@@ -244,7 +230,6 @@ const HomePage = () => {
         {/* Connect mobile app */}
         <Col span={7}>
           <Container
-            containerHeight={155}
             leftHeader="Connect mobile app"
             alighnHeader="start"
             headerHeight={40}
